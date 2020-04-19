@@ -1,0 +1,12 @@
+<%= form_with model: @article do |f| %>
+  <%= label :article_title, "Title" %>
+  <%= f.text_field :title %>
+
+  <%= label :article_source_title, "Source" %>
+  <%= f.text_field :source_title %>
+
+  <%= label :article_source_url, "URL" %>
+  <%= f.text_field :source_url %>
+
+  <%= link_to 'Next' %>
+<% end %>

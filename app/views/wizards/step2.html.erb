@@ -1,0 +1,13 @@
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><%= link_to "Step 1", step1_wizard_path %></li>
+  <li class="breadcrumb-item active">Step 2</li>
+</ol>
+
+<%= simple_form_for @article_wizard, as: :article_wizard, url: validate_step_wizard_path do |f| %>
+  <%= f.error_notification %>
+  <%= hidden_field_tag :current_step, 'step2' %>
+
+  <%= f.input :body, as: :text, class: 'form-control' %>
+
+  <%= f.submit 'Continue', class: 'form-control btn btn-primary mt-2' %>
+<% end %>

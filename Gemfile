@@ -15,6 +15,10 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'oj'
 gem 'oj_mimic_json'
 
+# Media
+gem 'carrierwave'
+gem 'mini_magick'
+
 gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
@@ -22,6 +26,9 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'bootstrap', '~> 4.4.1'
 gem 'jquery-rails'
+gem 'wicked'
+gem 'simple_form'
+gem 'ckeditor'
 
 # Auth
 gem 'devise'
