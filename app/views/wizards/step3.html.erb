@@ -8,8 +8,8 @@
   <%= f.error_notification %>
   <%= hidden_field_tag :current_step, 'step3' %>
 
-  <%= f.input :category %>
-  <%= f.input :age_group %>
+  <%= f.input :category, collection: Article::CATEGORIES %>
+  <%= f.input :age_group, collection: Article::AGE_GROUPS %>
 
   <%= f.submit 'Add article', class: 'btn btn-primary' %>
 <% end %>

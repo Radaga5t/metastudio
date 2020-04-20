@@ -2,11 +2,14 @@
 
 # Модель статьи (новости)
 class Article < ApplicationRecord
+  AGE_GROUPS = %w[0+ 6+ 12+ 16+ 18+].freeze
+  CATEGORIES = %w[Auto Health Finance Events].freeze
+
   # Принадлежит автору (пользователю в системе, который опубликовал)
   belongs_to :user
 
-  enum age_group: %w[0+ 6+ 12+ 16+ 18+]
-  enum category: %w[Auto Health Finance Events]
+  enum age_group: AGE_GROUPS
+  enum category: CATEGORIES
 
   validates :title, :source_title, :body, presence: true
 

@@ -20,7 +20,14 @@ class ArticlesController < ApplicationController
 
   def create; end
 
-  def destroy; end
+  def destroy
+    @article.destroy
+    respond_to do |format|
+      format.js
+      format.html { redirect_to root_path, notice: 'Article was successfuly deleted' }
+      format.json { head :no_content }
+    end
+  end
 
   private
 

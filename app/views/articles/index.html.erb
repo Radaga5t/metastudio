@@ -11,8 +11,9 @@
         </div>
         <% if current_user.present? && current_user == article.user %>
           <%= link_to 'Delete', article_path(article),
-                      method: :delete, remote: true,
-                      class: "btn btn-danger" %>
+                      method: :delete,
+                      data: {confirm: 'Are you sure?', remote: true},
+                      class: "btn btn-danger delete" %>
         <% end %>
       </div>
     </div>

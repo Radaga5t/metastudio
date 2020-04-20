@@ -1,2 +1,25 @@
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+<% if @article.present? %>
+  <div class="row justify-items-start align-items-end">
+    <h1 class="mr-3 col-xm-2 align-self-center"><%= @article.title %></h1>
+    <div class="col-xm-10">
+      <p class="text-muted">
+        added by <%= @article.user.email %> at <%= @article.user.created_at.strftime("%Y-%m-%d") %>
+      </p>
+      <p class="text-muted">
+        <i>
+          Category:
+          <%= @article.category %>
+          from <%= link_to @article.source_title, @article.source_url, class: "text-primary" %>
+        </i>
+        (<%= @article.age_group %>)
+      </p>
+    </div>
+  </div>
+
+  <p>
+    <%= @article.body %>
+  </p>
+  
+<% end %>
+
+<%= link_to '<< Back', articles_path, class: 'btn btn-primary' %>
