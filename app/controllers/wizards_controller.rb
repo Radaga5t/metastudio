@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class WizardsController < ApplicationController
+  before_action :authenticate_user!
   before_action :load_article_wizard, except: %i[validate_step]
 
   def validate_step
